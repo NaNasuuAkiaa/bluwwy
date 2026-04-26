@@ -8,6 +8,14 @@ py bluwwy.py <image.png> <size (3,5,7,9)> <output.png>
 The larger the size, the bigger the gaussian kernel is, the blurrier it becomes. 
 (if you want something blurrier, just modify the code, it's very simple, but you might want to look up a sigma value that fits your new kernel size, because eyeballing it won't do the trick)
 
+### EXAMPLE
+
+```py bluwwy.py input.png 9 output.png```
+input.png: 
+![input](input.png)
+output.png:
+![output](output.png)
+
 ## EXPLANATION
 
 This algorithm is widely used in commercial software such as Photoshop or GIMP. I thought it would be fun to release it because it's very straightforward, and checking out the code is quite interesting, though please note that the comments are in Spanish! :/
