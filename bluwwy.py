@@ -36,7 +36,7 @@ def getcolor(x, y, img_array, kernel, size):
     suma_kernel = np.sum(sub_kernel)
     kernel_normalizado = sub_kernel / suma_kernel
     
-    # color
+    # aplicar kernel a los 4 canales (RGBA)
     resultado = np.sum(neighboring * kernel_normalizado[:, :, np.newaxis], axis=(0, 1))
     
     return tuple(np.round(resultado).astype(int))
@@ -56,7 +56,8 @@ def main():
     if kernel_size not in [3, 5, 7, 9]:
         argerror()
         
-    imagen = Image.open(input_file).convert("RGB")
+    # Cargar como RGBA para conservar transparencia
+    imagen = Image.open(input_file).convert("RGBA")
     ancho, alto = imagen.size
     img_array = np.array(imagen, dtype=float) 
     
@@ -64,9 +65,9 @@ def main():
     sigma = kernels_sigma[kernel_size]
     kernel = gaussian_kernel(kernel_size, sigma)
     
-    # Creamos imagen de salida
-    output_img = Image.new("RGB", (ancho, alto))
-    pixels_output = output_img.load() # load() > putpixel (y que getpixel tambien)
+    # Crear imagen de salida RGBA
+    output_img = Image.new("RGBA", (ancho, alto))
+    pixels_output = output_img.load()
 
     print(f"Procesando imagen de {ancho}x{alto} con kernel {kernel_size}...")
 
