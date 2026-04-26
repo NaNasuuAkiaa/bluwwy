@@ -1,6 +1,7 @@
 # BLUWWY 
 
 Bluwwy is a simple (and somewhat slow) Python tool I developed in an hour and a half to apply Gaussian blur to images.
+Supports transparency and PNGs!!
 
 ## USAGE
 py bluwwy.py <image.png> <size (3,5,7,9)> <output.png>
