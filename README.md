@@ -11,10 +11,10 @@ The larger the size, the bigger the gaussian kernel is, the blurrier it becomes.
 ### EXAMPLE
 
 ```py bluwwy.py input.png 9 output.png```
-input.png: 
-![input](input.png)
-output.png:
-![output](output.png)
+input.png: /n
+![input](input.png)/n
+output.png:/n
+![output](output.png)/n
 
 ## EXPLANATION
 
